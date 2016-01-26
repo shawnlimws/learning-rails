@@ -6,6 +6,7 @@ class MagicBallController < ApplicationController
     p @magic_answer
   end
 
+  private
   def generate_random_response
     all_responses = [
       "LGTM",

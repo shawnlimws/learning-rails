@@ -1,0 +1,17 @@
+<p>
+  Your move is <%= params[:throw] %>
+</p>
+
+<% if @result %>
+  <p>
+     Your guess the correct secret number!
+  </p>
+<% else %>
+  <p>
+    Oh no.. you guess wrongly
+  </p>
+  <p>
+    <%= "The random number is #{@random_num}" %>
+  </p>
+<% end %>
+<%= link_to "Back", guess_secret_number_path %>

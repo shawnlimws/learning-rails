@@ -5,7 +5,17 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static_pages#index'
 
+  # magic ball
   get 'magic_ball' => 'magic_ball#result'
+
+  # secret number game
+  get 'guess_secret_number' => 'secret_number#guess'
+  post 'secret_number_results/:guess' => 'secret_number#result', :as => "secret_number_results"
+
+  # rock paper scissors
+  get 'rock_paper_scissors' => 'rock_paper_scissors#throw'
+  post 'rock_paper_scissors_results/:throw' => 'rock_paper_scissors#result', :as => "rock_paper_scissors_results"
+
   # url is '/magic_ball'
 
   # Example of regular route:
