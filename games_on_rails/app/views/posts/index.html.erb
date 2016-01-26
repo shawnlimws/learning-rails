@@ -6,8 +6,17 @@
   </head>
   <body>
     <h1>Hello World!</h1>
+    <h2>Games</h2>
     <%= link_to "Magic Ball", magic_ball_path %>
     <%= link_to "Secret Number", guess_secret_number_path %>
     <%= link_to "Rock Paper Scissors", rock_paper_scissors_path %>
+
+    <h2>Blog</h2>
+    <%= link_to "New Post", new_post_path %>
+    <% @posts.each do |post| %>
+    <h3><%= post.title %></h3>
+    <p><%= post.body %></p>
+    <%= link_to "See More", post_path(post.id) %>
+    <% end %>
   </body>
 </html>

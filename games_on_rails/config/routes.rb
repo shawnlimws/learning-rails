@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'static_pages#index'
+  root 'posts#index'
 
   # magic ball
   get 'magic_ball' => 'magic_ball#result'
@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   # rock paper scissors
   get 'rock_paper_scissors' => 'rock_paper_scissors#throw'
   post 'rock_paper_scissors_results/:throw' => 'rock_paper_scissors#result', :as => "rock_paper_scissors_results"
+
+  resources :posts
 
   # url is '/magic_ball'
 
