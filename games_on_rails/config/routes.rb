@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   get 'rock_paper_scissors' => 'rock_paper_scissors#throw'
   post 'rock_paper_scissors_results/:throw' => 'rock_paper_scissors#result', :as => "rock_paper_scissors_results"
 
-  resources :posts
+  resources :posts do
+    resources :comments, :only => [:create, :destroy]
+  end
 
   # url is '/magic_ball'
 
